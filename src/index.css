@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark theme - Verridian AI inspired */
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --card: #1a1a1a;
+    --card-foreground: #ededed;
+    --primary: #FFD700;
+    --primary-foreground: #0a0a0a;
+    --secondary: #C0C0C0;
+    --secondary-foreground: #0a0a0a;
+    --accent: #00D4FF;
+    --accent-foreground: #0a0a0a;
+    --destructive: #EF4444;
+    --destructive-foreground: #ededed;
+    --border: #2a2a2a;
+    --ring: #FFD700;
+    --success: #10B981;
+    --warning: #F59E0B;
+    --muted: #1a1a1a;
+    --muted-foreground: #9ca3af;
+  }
+
+  * {
+    @apply border-gray-700;
+  }
+
+  body {
+    @apply bg-gray-900 text-gray-100;
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  .hexagon-pattern {
+    background: 
+      /* Base dark background */
+      radial-gradient(ellipse at center, #0a0a0a 0%, #0a0a0a 100%),
+      /* Geometric pattern overlay */
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 215, 0, 0.015) 10px,
+        rgba(255, 215, 0, 0.015) 20px,
+        transparent 20px,
+        transparent 30px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 10px,
+        rgba(0, 212, 255, 0.01) 10px,
+        rgba(0, 212, 255, 0.01) 20px,
+        transparent 20px,
+        transparent 30px
+      );
+    background-size: 60px 60px;
+    position: relative;
+  }
+
+  .metallic-gold {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+  }
+
+  .glass-card {
+    @apply bg-gray-800/60 backdrop-blur-sm border border-gray-600/30;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-200 hover:transform hover:scale-105 hover:shadow-lg;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
