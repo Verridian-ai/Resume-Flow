@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -24,8 +25,15 @@ interface SeekerDashboardProps {
 }
 
 export function SeekerDashboard({ user }: SeekerDashboardProps) {
+  const navigate = useNavigate()
   const recentActivity = activityData.slice(0, 5)
   const recentNotifications = notificationsData.slice(0, 5)
+
+  const handleQuickAction = (action: any) => {
+    if (action.link) {
+      navigate(action.link)
+    }
+  }
 
   const statCards = [
     {
@@ -128,7 +136,11 @@ export function SeekerDashboard({ user }: SeekerDashboardProps) {
                 <h3 className="text-white font-medium">Complete Your Profile</h3>
                 <p className="text-gray-400 text-sm">Your profile is {dashboardStats.profileCompletion}% complete</p>
               </div>
-              <Button variant="primary" size="sm">
+              <Button 
+                variant="primary" 
+                size="sm"
+                onClick={() => navigate('/profile')}
+              >
                 Continue
               </Button>
             </div>
@@ -172,9 +184,13 @@ export function SeekerDashboard({ user }: SeekerDashboardProps) {
           {quickActions.map((action, index) => {
             const Icon = action.icon
             return (
-              <Card key={index} className="cursor-pointer hover-lift group">
+              <Card 
+                key={index} 
+                className="cursor-pointer hover-lift group transition-all duration-200 hover:scale-105"
+                onClick={() => handleQuickAction(action)}
+              >
                 <CardContent className="p-6 text-center">
-                  <div className={`h-12 w-12 ${action.color} rounded-lg flex items-center justify-center mx-auto mb-3`}>
+                  <div className={`h-12 w-12 ${action.color} rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform`}>
                     <Icon className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="font-medium text-white mb-1">{action.title}</h3>
