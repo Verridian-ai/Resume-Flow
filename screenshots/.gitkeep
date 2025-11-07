@@ -1,0 +1,20 @@
+# Screenshots Directory
+
+This directory contains all the platform screenshots referenced in the README.md.
+
+## Image Files:
+- landing_page_full.png - Complete landing page
+- login_page_with_demo_options.png - Demo account selection interface
+- login_page_jobseeker_demo_active.png - Job seeker demo login
+- login_page_career_coach_demo_active.png - Career coach demo login
+- job_seeker_dashboard_main.png - Main job seeker dashboard
+- job_seeker_dashboard_complete.png - Complete job seeker view
+- job_seeker_chat_page.png - AI chat interface
+- job_seeker_jobs_page.png - Job search and applications
+- job_seeker_documents_page.png - Document management
+- job_seeker_profile_page.png - Profile management
+- career_coach_dashboard_main.png - Coach dashboard
+- career_coach_clients_page.png - Client management
+- career_coach_messages_page.png - Client communication
+- career_coach_workspaces_page.png - Workspace organization
+- career_coach_settings_page.png - Coach settings
